@@ -92,7 +92,6 @@ else if(isset($_POST['u'])){
     
     $id = $_POST['id'];
     $name = $_POST['n'];
-    // $count = $_POST['ps'];
     $result = $mysqli->query("SELECT token FROM tokens WHERE type='access'");
     $row = mysqli_fetch_array($result);
     $access_token = $row['token'];
@@ -295,9 +294,7 @@ else if(isset($_POST['u'])){
                                 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
                                 $visits_history['id'] = $row1['visits_id'];
                             }
-                            else {
-                                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-                            }
+                            
                             
                             curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: Zoho-oauthtoken " . $access_token));
                             $requestBody = array();
