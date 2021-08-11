@@ -69,23 +69,7 @@ else if(isset($_POST['u'])){
                         $litmos_modules["" . $lmodule['OriginalId']] = $lmodule['Id'];
                     }
                 }
-                else{
-                    $url1 = "https://api.litmoseu.com/v1.svc/users/" . $litmos_user_id . "/courses/" . $lcourse['Id'] . "?source=sampleapp&format=json";
-                    $ch = curl_init();
-                    curl_setopt($ch, CURLOPT_URL, $url1);
-                    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-type: application/json", "apikey:"));
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                    $resp = curl_exec($ch);
-                    $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-                    curl_close($ch);
-                    if($httpcode == 200){
-                        $litmos_course_detail = json_decode($resp, true);
-                        foreach($litmos_course_detail['Modules'] as $lmodule){
-                            $litmos_modules["" . $lmodule['OriginalId']] = $lmodule['Id'];
-                        }
-                    }
-                    else exit;
-                }
+              
             }
         }
     }
