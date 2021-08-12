@@ -207,10 +207,7 @@ else if(isset($_POST['u'])){
                                 $str_tmp1 = explode("moduleId=", $url);
                                 if(count($str_tmp1) > 1) $visits_history['Module'] = intval($str_tmp1[1]);
                             }
-                            if(preg_match('/moduleid=/', $url)){
-                                $str_tmp1 = explode("moduleid=", $url);
-                                if(count($str_tmp1) > 1) $visits_history['Module'] = intval($str_tmp1[1]);
-                            }
+                          
                             if($visits_history['Module'] != ""){
                                 $module_id = "" . $visits_history['Module'];
                                 $visits_history['Module'] = $litmos_modules[$module_id]['Name'];
