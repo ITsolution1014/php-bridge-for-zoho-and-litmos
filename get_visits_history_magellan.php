@@ -360,7 +360,7 @@ else if(isset($_POST['u'])){
                                             $time = (int)$str_tmp[1]/1000;
                                             $quiz_history['Passed_Date'] = date("d-m-Y H:i:s", $time);    
                                         }
-                                        else $quiz_history['Passed_Date'] = "";
+                                       
                                         $str_tmp1 = explode("/Date(", $litmos_modules[$module_id]['StartDate']);
                                         if(count($str_tmp1) > 1){
                                             $time1 = (int)$str_tmp1[1]/1000;
@@ -387,9 +387,7 @@ else if(isset($_POST['u'])){
                                         $resp = curl_exec($ch);
                                         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
                                         curl_close($ch);
-                                        if($httpcode == 201){
-                                            $mysqli->query("INSERT INTO quiz_history(client_id, module_id) VALUES('" . $id . "', '" . $module_id . "')");
-                                        }
+                                   
                                     }
                                 }
                             }
