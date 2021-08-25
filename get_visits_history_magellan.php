@@ -63,13 +63,6 @@ else if(isset($_POST['u'])){
                 $resp = curl_exec($ch);
                 $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
                 curl_close($ch);
-                if($httpcode == 200){
-                    $litmos_course_detail = json_decode($resp, true);
-                    foreach($litmos_course_detail['Modules'] as $lmodule){
-                        $litmos_modules["" . $lmodule['OriginalId']] = $lmodule['Id'];
-                    }
-                }
-              
             }
         }
     }
