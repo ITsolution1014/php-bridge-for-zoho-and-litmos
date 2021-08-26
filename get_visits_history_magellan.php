@@ -415,14 +415,7 @@ else if(isset($_POST['u'])){
                             $resp = curl_exec($ch);
                             $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
                             curl_close($ch);
-                            if($httpcode <= 201){
-                                $resp_data = json_decode($resp, true);
-                                $data = $resp_data['data'];
-                                $details = $data[0]['details'];
-                                $idd = $details['id'];
-                                if($count == 0) $mysqli->query("INSERT INTO visits_history(client_id, visits_id, tracking_id) VALUES('" . $id . "', '" . $idd . "', " . $row['id'] . ")");
-                                $mysqli->query("UPDATE tracking SET saved=1 WHERE id=" . $row['id']);
-                            }
+                          
                         }
                     }
                     break;
