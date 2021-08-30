@@ -395,12 +395,6 @@ else if(isset($_POST['u'])){
                             $ch = curl_init();
                             curl_setopt($ch, CURLOPT_URL, $url);
                             
-                            if($count == 1){
-                                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-                                $visits_history['id'] = $row1['visits_id'];
-                            }
-                            
-                            
                             curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: Zoho-oauthtoken " . $access_token));
                             $requestBody = array();
                             $recordArray = array();
