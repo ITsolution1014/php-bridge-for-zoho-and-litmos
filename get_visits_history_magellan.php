@@ -342,10 +342,7 @@ else if(isset($_POST['u'])){
                                         $quiz_history['Question'] = $litmos_modules[$module_id]['Name'];
                                         $quiz_history['Scores'] = "" . $litmos_modules[$module_id]['Score'];
                                         $str_tmp = explode("/Date(", $litmos_modules[$module_id]['DateCompleted']);
-                                        if(count($str_tmp) > 1){
-                                            $time = (int)$str_tmp[1]/1000;
-                                            $quiz_history['Passed_Date'] = date("d-m-Y H:i:s", $time);    
-                                        }
+                               
                                        
                                         $str_tmp1 = explode("/Date(", $litmos_modules[$module_id]['StartDate']);
                                         if(count($str_tmp1) > 1){
