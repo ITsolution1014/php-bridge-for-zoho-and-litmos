@@ -153,7 +153,6 @@ else if(isset($_POST['u'])){
                     $data = $resp_data['data'];
                     $details = $data[0]['details'];
                     $idd = $details['id'];
-                    if($count == 0) $mysqli->query("INSERT INTO visits_history(client_id, visits_id, tracking_id) VALUES('" . $client['id'] . "', '" . $idd . "', " . $row['id'] . ")");
                 }
             }
             if($cnt == count($clients)) $mysqli->query("UPDATE tracking SET saved=1 WHERE id=" . $row['id']);
