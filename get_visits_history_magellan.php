@@ -188,13 +188,7 @@ else if(isset($_POST['u'])){
                             $visits_history['Operating_System'] = $detail['platform'];
                             $visits_history['Visit_Date'] = date("d-m-Y H:i:s", strtotime($row['time_recorded']));
                             $visits_history['Module'] = "";
-                            if(preg_match('/\/module/', $url)){
-                                $str_tmp1 = explode("/module/", $url);
-                                if(count($str_tmp1) > 1){
-                                    $str_tmp2 = explode("/", $str_tmp1[1]);
-                                    $visits_history['Module'] = intval($str_tmp2[0]);
-                                }
-                            }
+                         
                     
                           
                             if($visits_history['Module'] != ""){
