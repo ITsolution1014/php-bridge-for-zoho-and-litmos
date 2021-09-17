@@ -331,12 +331,6 @@ else if(isset($_POST['u'])){
                                         $str_tmp = explode("/Date(", $litmos_modules[$module_id]['DateCompleted']);
                                
                                        
-                                        $str_tmp1 = explode("/Date(", $litmos_modules[$module_id]['StartDate']);
-                                        if(count($str_tmp1) > 1){
-                                            $time1 = (int)$str_tmp1[1]/1000;
-                                            $quiz_history['Started_Date'] = date("d-m-Y H:i:s", $time1);
-                                        }
-                                        else $quiz_history['Started_Date'] = "";
                                         $quiz_history['Attempts'] = "" . $litmos_modules[$module_id]['Attempt'];
                                         $quiz_history['Completed'] = $litmos_modules[$module_id]['Completed'] ? "Oui" : "Non";
                                         $quiz_history['Client'] = array(
